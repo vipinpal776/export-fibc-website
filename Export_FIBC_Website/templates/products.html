@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore FIBC bag product options including U-panel, circular, baffle, conductive, coated, liner and food-grade bulk bags.">
+    <title>Products | Export FIBC Bags</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="/"><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Export FIBC Bags logo"><span><strong>{{ company_name }}</strong><small>{{ company_tagline }}</small></span></a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-panel">
+            <a class="{{ 'active' if active_page == 'home' else '' }}" href="/">Home</a>
+            <a class="{{ 'active' if active_page == 'about' else '' }}" href="/about">About</a>
+            <a class="{{ 'active' if active_page == 'products' else '' }}" href="/products">Products</a>
+            <a class="{{ 'active' if active_page == 'bagweight' else '' }}" href="/bagweight">Bag Weight</a>
+            <a class="{{ 'active' if active_page == 'contact' else '' }}" href="/contact">Contact</a>
+            <a class="btn btn-primary nav-cta" href="/contact">Request Quote</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <img src="{{ url_for('static', filename='images/home/industrial.jpg') }}" alt="FIBC products for export">
+            <div><p class="eyebrow">Products</p><h1>FIBC Bag Solutions For Bulk Export Packaging</h1><p>Customizable jumbo bag options for safe handling, storage and international shipment.</p></div>
+        </section>
+
+        <section class="section">
+            <div class="product-grid">
+                <article class="product-card reveal"><h3>U-Panel FIBC Bags</h3><p>Strong construction for general industrial, mineral and agricultural bulk packaging.</p><ul><li>SWL based customization</li><li>Top and bottom discharge options</li><li>Coated or uncoated fabric</li></ul></article>
+                <article class="product-card reveal"><h3>Circular FIBC Bags</h3><p>Seam-efficient tubular design for fine powders, grains and flowable products.</p><ul><li>Excellent shape retention</li><li>Cost-effective export option</li><li>Multiple loop styles</li></ul></article>
+                <article class="product-card reveal"><h3>Baffle Bags</h3><p>Designed to hold a square shape for better container loading and warehouse stacking.</p><ul><li>Space-saving design</li><li>Improved pallet stability</li><li>Suitable for premium logistics</li></ul></article>
+                <article class="product-card reveal"><h3>Conductive & Anti-Static Bags</h3><p>Specialized options for materials where static management is required.</p><ul><li>Application-led specification</li><li>Safety-focused sourcing</li><li>Inspection coordination</li></ul></article>
+                <article class="product-card reveal"><h3>Food Grade Bags</h3><p>Clean bulk packaging for food grains, pulses, sugar and related commodities.</p><ul><li>Food-sector suitability</li><li>Liner options available</li><li>Export packing support</li></ul></article>
+                <article class="product-card reveal"><h3>Liner & Coated Bags</h3><p>Moisture-protection options for powders, chemicals and sensitive bulk materials.</p><ul><li>PE liner options</li><li>Laminated fabric</li><li>Dust-control support</li></ul></article>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="reveal"><p class="eyebrow">Need A Custom Specification?</p><h2>Send Your Bag Drawing, GSM, SWL And Destination Port</h2><p>We will coordinate a clear quotation path with suitable manufacturing capability.</p><a class="btn btn-light" href="/contact">Request Product Quote</a></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Export FIBC Bags logo"><h3>{{ company_name }}</h3><p>{{ company_tagline }}</p></div>
+        <div><h4>Quick Links</h4><a href="/">Home</a><a href="/about">About</a><a href="/bagweight">Bag Weight</a><a href="/contact">Contact</a></div>
+        <div><h4>Contact</h4><p>Email: {{ email }}</p><p>Mobile: {{ phone }}</p><p>India based export coordination for global buyers.</p></div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

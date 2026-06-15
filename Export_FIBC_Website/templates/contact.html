@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Export FIBC Bags for FIBC bag sourcing, production monitoring and export shipment support.">
+    <title>Contact | Export FIBC Bags</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="/"><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Export FIBC Bags logo"><span><strong>{{ company_name }}</strong><small>{{ company_tagline }}</small></span></a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-panel">
+            <a class="{{ 'active' if active_page == 'home' else '' }}" href="/">Home</a>
+            <a class="{{ 'active' if active_page == 'about' else '' }}" href="/about">About</a>
+            <a class="{{ 'active' if active_page == 'products' else '' }}" href="/products">Products</a>
+            <a class="{{ 'active' if active_page == 'bagweight' else '' }}" href="/bagweight">Bag Weight</a>
+            <a class="{{ 'active' if active_page == 'contact' else '' }}" href="/contact">Contact</a>
+            <a class="btn btn-primary nav-cta" href="/contact">Request Quote</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero compact">
+            <img src="{{ url_for('static', filename='images/home/transport.jpg') }}" alt="Contact Export FIBC Bags for export shipment support">
+            <div><p class="eyebrow">Contact</p><h1>Request A Focused FIBC Export Quote</h1><p>Send your requirement and our export coordination team will respond with the details needed to move forward.</p></div>
+        </section>
+
+        <section class="section contact-layout">
+            <div class="contact-card reveal">
+                <h2>Export Coordination Desk</h2>
+                <p>Email: <a href="mailto:{{ email }}">{{ email }}</a></p>
+                <p>Mobile: <a href="tel:+917905677389">{{ phone }}</a></p>
+                <p>Share bag size, SWL, GSM, coating, liner, top-bottom style, order quantity and destination port for a faster quotation path.</p>
+                <div class="contact-badges">
+                    <span>FIBC Sourcing</span>
+                    <span>Inspection Support</span>
+                    <span>Shipment Updates</span>
+                </div>
+            </div>
+            <form class="quote-form reveal" id="quoteForm">
+                <label>Full Name<input type="text" id="name" required></label>
+                <label>Email<input type="email" id="quoteEmail" required></label>
+                <label>Country<input type="text" id="country" required></label>
+                <label>Requirement Type<select id="requirement"><option>U-Panel FIBC Bags</option><option>Circular FIBC Bags</option><option>Baffle Bags</option><option>Food Grade Bags</option><option>Coated / Liner Bags</option><option>Custom FIBC Requirement</option></select></label>
+                <label>Message<textarea id="message" rows="6" required></textarea></label>
+                <button class="btn btn-primary" type="submit">Send Requirement</button>
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Export FIBC Bags logo"><h3>{{ company_name }}</h3><p>{{ company_tagline }}</p></div>
+        <div><h4>Quick Links</h4><a href="/">Home</a><a href="/about">About</a><a href="/products">Products</a><a href="/bagweight">Bag Weight</a></div>
+        <div><h4>Contact</h4><p>Email: {{ email }}</p><p>Mobile: {{ phone }}</p><p>India based export coordination for global buyers.</p></div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
